@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-tap-highlight-color: transparent; /* Removes standard Android tap highlight overlay */
+}
+
+body {
+    /* TV Girl Color System Palette Mix */
+    background: radial-gradient(circle at center, #2c1b30, #120914);
+    color: #e5e5e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Glassmorphic Project Container */
+.container {
+    width: 100%;
+    max-width: 650px;
+    background: rgba(44, 27, 48, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 40px rgba(244, 51, 150, 0.15);
+    border: 1px solid rgba(244, 51, 150, 0.2);
+    text-align: center;
+    z-index: 2;
+}
+
+h2 {
+    color: #f43396; /* Signature French-Pop Pink Tint */
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px #493359, 0 0 20px rgba(244, 51, 150, 0.4);
+    font-size: 28px;
+}
+
+/* App Group Sections */
+.connection-box, .video-input-box {
+    background: rgba(18, 9, 20, 0.6);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(244, 51, 150, 0.2);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.connection-box:focus-within, .video-input-box:focus-within {
+    border-color: #f43396;
+    box-shadow: 0 0 15px rgba(244, 51, 150, 0.25);
+}
+
+#my-id-display {
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #b19bbd;
+}
+
+#my-id {
+    font-weight: bold;
+    color: #fff;
+    background: rgba(244, 51, 150, 0.15);
+    padding: 4px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(244, 51, 150, 0.4);
+}
+
+.input-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 5px;
+}
+
+/* Modern Rounded Input Boxes */
+input[type="text"] {
+    flex: 1;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(244, 51, 150, 0.2);
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+input[type="text"]:focus {
+    border-color: #f43396;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 10px rgba(244, 51, 150, 0.3);
+}
+
+/* Rounded Rectangle Buttons with Physics-Based Elastic Transitions */
+button {
+    background: linear-gradient(135deg, #f43396, #b01562);
+    color: white;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 12px; /* Perfect rounded rectangle layout */
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(244, 51, 150, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 51, 150, 0.5);
+    background: linear-gradient(135deg, #ff5ca7, #d61c77);
+}
+
+button:active {
+    transform: scale(0.95) translateY(0); /* Bounces back dynamically upon click */
+}
+
+#status {
+    font-size: 13px;
+    color: #8a7391;
+    margin-top: 8px;
+}
+
+/* Video Player Border Constraints */
+.player-wrapper {
+    margin-top: 20px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 2px solid rgba(244, 51, 150, 0.2);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+    background: #000;
+    transition: transform 0.4s ease;
+}
+
+video {
+    width: 100%;
+    display: block;
+}
+
+/* --- Sticker Configurations --- */
+.sticker {
+    position: fixed;
+    bottom: 20px;
+    width: 90px;
+    height: auto;
+    z-index: 1;
+    pointer-events: none; /* User can click directly through stickers without breaking UI inputs */
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 8px rgba(244, 51, 150, 0.2));
+    opacity: 0.85;
+}
+
+.spiderman {
+    left: 25px;
+    animation: floatLeft 5s ease-in-out infinite;
+}
+
+.hellokitty {
+    right: 25px;
+    animation: floatRight 5.5s ease-in-out infinite;
+}
+
+/* Smooth Sinusoidal Floating Keyframes */
+@keyframes floatLeft {
+    0% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-12px) rotate(-1deg); }
+    100% { transform: translateY(0) rotate(-5deg); }
+}
+
+@keyframes floatRight {
+    0% { transform: translateY(0) rotate(5deg); }
+    50% { transform: translateY(-15px) rotate(1deg); }
+    100% { transform: translateY(0) rotate(5deg); }
+}
+
+/* Optimization for mobile viewing portals */
+@media (max-width: 500px) {
+    .sticker {
+        width: 65px;
+        bottom: 10px;
+    }
+    .spiderman { left: 10px; }
+    .hellokitty { right: 10px; }
+}
